@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO.Ports;
 
 namespace SerialTest
 {
@@ -6,7 +7,13 @@ namespace SerialTest
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Serial ports available:");
+            Console.WriteLine("-----------------------");
+            foreach (var portName in SerialPort.GetPortNames())
+            {
+                Console.WriteLine(portName);
+            }
+            Console.ReadLine();
         }
     }
 }
